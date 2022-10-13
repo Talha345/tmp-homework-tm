@@ -4,6 +4,7 @@ name: nginx
 templates:
   ctl.erb: bin/ctl
 
-packages: []
+packages:
+- nginx
 
 properties: {}

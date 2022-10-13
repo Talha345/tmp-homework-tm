@@ -1,0 +1,7 @@
+---
+name: nginx
+
+dependencies: []
+
+files:
+- nginx_1.22.0/nginx-1.22.0.tar.gz  # http://nginx.org/download/nginx-1.22.0.tar.gz

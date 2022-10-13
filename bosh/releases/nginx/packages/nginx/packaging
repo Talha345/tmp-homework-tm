@@ -1,0 +1,10 @@
+set -e -x
+
+tar xzf nginx_1.22.0/nginx-1.22.0.tar.gz
+
+pushd nginx-1.22.0
+  ./configure --prefix=${BOSH_INSTALL_TARGET}
+
+  make
+  make install
+popd
