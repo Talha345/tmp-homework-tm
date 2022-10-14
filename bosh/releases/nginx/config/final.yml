@@ -3,4 +3,4 @@ name: nginx
 blobstore:
   provider: local
   options:
-    blobstore_path: src/
+    blobstore_path: /src/
