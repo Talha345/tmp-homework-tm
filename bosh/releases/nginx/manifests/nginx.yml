@@ -53,7 +53,7 @@ instance_groups:
                     error_log /var/vcap/sys/log/nginx/server-error.log;
 
                     location / {
-                        root /;
+                        root /var/vcap/packages/nginx/html/index.html;
                     }
                 }
             }
