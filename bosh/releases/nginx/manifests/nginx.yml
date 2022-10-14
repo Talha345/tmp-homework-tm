@@ -27,7 +27,7 @@ instance_groups:
       - name: nginx
         release: nginx
         properties:
-          nginx_configuration: |
+          nginx_conf: |
             user nobody vcap;
             worker_processes  1;
             daemon off;
