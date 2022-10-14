@@ -5,15 +5,24 @@ releases:
   - name: nginx
     version: latest
 
+stemcells:
+  - alias: ubuntu
+    os: ubuntu-trusty
+    version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 3
+  canary_watch_time: 15000-30000
+  update_watch_time: 15000-300000
+
+
 instance_groups:
   - name: nginx
     azs: [z1]
     instances: 1
     vm_type: default
     stemcell: ubuntu
-    networks:
-      - name: main
-        static_ips: [ 192.168.0.1 ]
     jobs:
       - name: nginx
         release: nginx
@@ -48,3 +57,6 @@ instance_groups:
                     }
                 }
             }
+    networks:
+      - name: default
+        static_ips: [ 10.244.0.34 ]
