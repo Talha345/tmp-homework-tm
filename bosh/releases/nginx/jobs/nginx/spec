@@ -12,4 +12,6 @@ packages:
 properties:
   nginx_conf:
     description: 'Nginx Configuration'
+  pre_start:
+    description: 'Sets up Basic Auth file'
 
