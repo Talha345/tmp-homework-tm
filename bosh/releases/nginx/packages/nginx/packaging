@@ -1,7 +1,8 @@
 set -e -x
 
 tar xzf nginx_1.22.0/nginx-1.22.0.tar.gz
-apt-get install -y libpcre3 libpcre3-dev
+apt-get install -y libpcre3 libpcre3-dev apache2-utils
+
 pushd nginx-1.22.0
   ./configure --prefix=${BOSH_INSTALL_TARGET}
 
