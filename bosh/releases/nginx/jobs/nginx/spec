@@ -3,11 +3,12 @@ name: nginx
 
 templates:
   ctl.erb: bin/ctl
+  nginx.conf.erb: etc/nginx.conf
 
 packages:
 - nginx
 
 properties:
-  nginx_configuration:
+  nginx_conf:
     description: 'Nginx Configuration'
 
