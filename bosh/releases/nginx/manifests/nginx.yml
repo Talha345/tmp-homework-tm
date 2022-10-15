@@ -27,7 +27,7 @@ instance_groups:
       - name: nginx
         release: nginx
         properties:
-          pre-start: |
+          pre_start: |
             #!/bin/bash
             htpasswd -b -c /var/vcap/jobs/nginx/etc/.htpasswd admin admin
           nginx_conf: |
