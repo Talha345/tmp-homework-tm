@@ -1,7 +1,7 @@
+bosh/releases/nginx/config/private.yml
 jumpbox.key
 state.json
 creds.yml
-config/private.yml
 blobs
 dev_releases
 releases/*.tgz
