@@ -1,6 +1,8 @@
 ---
 name: nginx
 blobstore:
-  provider: local
+  provider: s3
   options:
-    blobstore_path: /src/
+    bucket_name: nginx-release-blob
+    region: us-east-2
+    host: s3-us-east-2.amazonaws.com
