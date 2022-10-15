@@ -29,7 +29,7 @@ instance_groups:
         properties:
           pre_start: |
             #!/bin/bash
-            htpasswd -b -c /var/vcap/jobs/nginx/etc/.htpasswd admin admin
+            echo "admin:$(echo "admin" | openssl passwd -apr1 -stdin)" >> /var/vcap/jobs/nginx/etc/.htpasswd
           nginx_conf: |
             user nobody vcap;
             worker_processes  1;
