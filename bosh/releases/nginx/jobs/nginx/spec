@@ -4,6 +4,7 @@ name: nginx
 templates:
   ctl.erb: bin/ctl
   nginx.conf.erb: etc/nginx.conf
+  pre_start.erb: bin/pre-start
 
 packages:
 - nginx

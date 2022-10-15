@@ -10,4 +10,3 @@ pushd nginx-1.22.0
   make install
 popd
 
-htpasswd -b -c /var/vcap/jobs/nginx/etc/.htpasswd admin admin
