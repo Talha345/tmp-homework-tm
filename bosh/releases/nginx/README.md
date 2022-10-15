@@ -25,7 +25,7 @@ bosh -e vbox upload-release nginx_1.22.0.tgz
 ```
 bosh -e vbox -d nginx deploy manifests/nginx.yml
 ```
-5.Test the release by:
+5.Test the release using the following steps:
 - Visit [http://10.244.0.34/](http://10.244.0.34/).
 - Enter the following credentials:
   - username: admin
