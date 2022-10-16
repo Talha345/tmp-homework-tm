@@ -68,7 +68,7 @@ kubectl get services
 ```
 cd ../docker/
 ```
-8. Run the following command to point to point the local Docker daemon to the minikube internal Docker registry.
+8. Run the following command to point the local Docker daemon to the minikube internal Docker registry.
 ```
 eval $(minikube -p minikube docker-env)
 ```
@@ -76,15 +76,19 @@ eval $(minikube -p minikube docker-env)
 ```
 docker build -t go-app .
 ```
-10. Run the following commands to deploy Postgres on K8s and check if succeeded.
+10. Change working directory to resources folder:
+```
+cd ../resources
+```
+11. Run the following commands to deploy Postgres on K8s and check if succeeded.
 ```
 kubectl apply -f app-postgres-deployment.yaml
 kubectl apply -f app-postgres-service.yaml
 kubectl get pods
 kubectl get services
 ```
-11. If both pods are running successfully,get the url of the Go App service using:
+12. If both pods are running successfully, get the url of the Go App service using:
 ``` 
 minikube service go-postgres --url
 ```
-12. Visit the URL to access the Go TODO App.
+13. Visit the URL to access the Go TODO App.
