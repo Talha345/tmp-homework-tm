@@ -1,6 +1,12 @@
 
 ## Nginx Release
 
+### Prerequisite
+
+Go to [https://bosh.io/docs/bosh-lite/](https://bosh.io/docs/bosh-lite/) and setup Bosh Lite on your local system and update the cloud config too.
+
+### Steps
+
 Follow the following steps to run and deploy the Nginx release:
 
 1.Clone the repository using the following steps:
