@@ -30,3 +30,61 @@ Don't use any helm charts for this task. The PostgreSQL database should be just 
 **Bonus**:<br/>
 Make the app accessible from the outside through Ingress into your kubernetes cluster. You can use a helm chart for this task.
 The app should be accessible via the route `<host>/app`.
+
+_____
+
+## Solution
+
+Follow the following steps to test the solution on local system.
+
+1. Install Minikube [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/) .
+2. Install Kubectl [https://kubernetes.io/docs/tasks/tools/](https://kubernetes.io/docs/tasks/tools/).
+3. Start Minikube using:
+```
+minikube start
+```
+4. Change working directory to resources folder:
+```
+cd resources
+```
+5. Export secrets to K8s using and check if succeeded:
+```
+kubectl create -f postgres-secret.yaml
+kubectl get secrets
+kubectl describe secrets  postgres-secret
+```
+
+6. Run the following commands to deploy Postgres on K8s and check if succeeded.
+```
+kubectl apply -f postgres-db-pv.yaml
+kubectl apply -f postgres-db-pvc.yaml
+kubectl apply -f postgres-db-deployment.yaml
+kubectl apply -f postgres-db-service.yaml
+kubectl get pods
+kubectl get services
+```
+
+7. Change working directory to docker folder:
+```
+cd ../docker/
+```
+8. Run the following command to point to point the local Docker daemon to the minikube internal Docker registry.
+```
+eval $(minikube -p minikube docker-env)
+```
+9. Build the docker image:
+```
+docker build -t go-app .
+```
+10. Run the following commands to deploy Postgres on K8s and check if succeeded.
+```
+kubectl apply -f app-postgres-deployment.yaml
+kubectl apply -f app-postgres-service.yaml
+kubectl get pods
+kubectl get services
+```
+11. If both pods are running successfully,get the url of the Go App service using:
+``` 
+minikube service go-postgres --url
+```
+12. Visit the URL to access the Go TODO App.
